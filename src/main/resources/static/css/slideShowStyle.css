@@ -1,0 +1,105 @@
+@charset "ISO-8859-1";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    color:#313131;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+div.slideContainer{
+	height: 100%;
+	position: relative;
+	
+}
+div.slide{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+div.slide img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+div.header {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    font-size: 2.5em;
+    padding: 10px;
+    border-radius: 0 12px 12px 0;
+    background-color:rgba(255,255,255,0.3);
+}
+.hOne{
+	margin-left: 40px;
+}
+.aboutUsFooter {
+    position: absolute;
+    margin-top:25%;
+    bottom: 5%;
+    left: 20%;
+    font-size: 2.2em;
+    border-radius: 12px 0 0 12px;
+    background-color:rgba(255,255,255,0.3);
+    padding:10px
+}
+
+.footer {
+    position: absolute;
+    bottom:5%;
+    left: 60%;
+    transform: translate(-5%, -60%);
+    font-size: 3em;
+    border-radius: 12px;
+    background-color:rgba(255,255,255,0.3);
+    padding:10px;
+}
+
+div.welcome_text{
+	position: absolute;
+    font-size: 3em;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 650px;
+}
+#hOneWelcometext{
+    color: white;
+}
+div.ownerSlide{
+	
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	padding: 40px 80px;
+	width: 100%;
+	height: 100%;
+}
+div.ownerSlide img{
+	position: static;
+	width: 450px;
+	margin-left: 100px;
+}
+div.ownerSlideText h1{
+	margin: 0 0 20px 0;
+	font-weight: bold;
+	font-size: 4.5em;
+}
+div.ownerSlideText p{
+	font-size: 3.2em;
+}

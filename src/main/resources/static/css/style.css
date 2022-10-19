@@ -1,0 +1,439 @@
+@charset "ISO-8859-1";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    color:#313131;
+}
+body{
+	background-color:#f3f3f3;
+}
+div.loginContainer{
+	height: 100vh;
+}
+.text-danger{
+	color:#c5290e;
+}
+div.mainContent, div.loginMainContent{
+	display: flex;
+    align-items: center;
+	justify-content: space-between;
+    position: relative;
+}
+div.loginMainContent{
+	width: 100%;
+	height: 100%;
+	padding:0;
+	justify-content: center;
+}
+div.left{
+	width: 100%;
+	height: 100%;
+	background-image: url("/images/20160115-5DM30245_b&w.jpg");
+	background-repeat: no-repeat;
+  	background-size: 100% 100%;
+  	display:flex;
+  	align-items: center;
+  	padding-left: 100px;
+}
+
+.to{
+	margin: 0 20px;
+}
+.ph_st{
+	margin: 0 40px;
+}
+div.loginText h1{
+	color: white;
+	font-size: 4.2em;
+}
+div.right{
+	margin: 20px;
+	padding: 50px;
+}
+input[type=text], [type=password] {
+	font-family: 'Merriweather', serif;
+    color:#313131;
+  	width: 100%;
+  	padding: 12px 20px;
+  	margin: 10px 0;
+  	display: inline-block;
+  	border: 1px solid #48e9ff;
+  	border-radius: 18px;
+  	box-sizing: border-box;
+  	box-shadow: 0 0 10px #719ECE;
+}
+input[type=text]:focus,[type=password]:focus {
+	outline: none !important;
+    background-color: #f2f9ff;
+    box-shadow: 0 0 20px #719ECE;
+}
+
+input[type=submit] {
+  	width: 100%;
+  	background-color: #ff0080;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 15px 0;
+  	border: none;
+  	border-radius: 4px;
+  	cursor: pointer;
+  	
+}
+
+input[type=submit]:hover {
+	box-shadow: 0 0 20px #719ECE;
+}
+div.postBody img{
+	width:120px;
+	border:2px solid black;	
+	border-radius:50%;
+}
+div.postContainer{
+	background: #f0f0f0;
+	border: 1px solid white;
+	padding: 20px;
+	height: 99vh;
+}
+	
+div.postImg img{
+	width: 400px;
+	height: 400px;
+}
+
+div.topSidePost{
+	display:flex;
+	justify-content: space-between;
+}
+div.edit img{
+	margin: 10px;
+	width:20px;
+	height: 20px;
+}
+.linkNoDecor a:link, a:visited{
+	text-decoration: none;
+	color:#313131;
+}
+
+div.adminPageContent{
+ 	padding: 35px 50px;
+	width: 100%;
+	height: 100%;
+}
+div.itemContent{
+	display: flex;
+	flex-wrap: wrap;
+	text-decoration: none;	  
+	margin: auto;
+  	width: 100%;
+  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+div.itemContent a:link, a:visited,
+	.myBtn:link, .myBtn:visited, 
+	div.topBar a:link, a:visited{
+	text-decoration: none;
+}
+div.content{
+	position: relative;
+	width: 290px;
+	height: 200px;
+	border: #f3f3f3 solid 3px;
+	border-radius: 4px;
+	text-align: center;
+}
+div.content h2{
+	margin: auto;
+}
+div.content img{
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+}
+div.overlay {
+ 	position: absolute;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	color: white;
+	background-color: rgba(150, 150, 150, 0.5);
+  	overflow: hidden;
+  	width: 100%;
+  	height: 0;
+  	border-radius: 4px;
+	transition: .5s ease;
+}
+div.content:hover .overlay {
+  	height: 100%;
+}
+div.content:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+div.contentText {
+  	color: white;
+  	font-size: 20px;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	text-align: center;
+}
+div.topBar{
+	margin: 0 auto;
+	max-width: 680px;
+	display: flex;
+	justify-content: space-between;
+	background-color: rgba(210, 233, 255, 0.5);
+	padding: 10px;
+	border-bottom: #828282 solid 0.5px;
+ 	border-bottom-left-radius: 25px;
+ 	border-bottom-right-radius: 25px;
+}
+div.topBar a {
+  	position: relative;
+  	display: block;
+  	overflow: hidden;
+}
+div.topBar a span {
+  	transition: transform 0.2s ease-out;
+}
+div.topBar span:first-child {
+	margin-top: 10px;
+  	display: flex;
+ 	align-items: center;
+  	justify-content: center;
+}
+
+div.topBar a span:last-child {
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	transform: translateY(-100%);
+}
+div.topBar img {
+  	width: 30px;
+}
+div.topBar a:hover span:first-child {
+  	transform: translateY(100px);
+}
+div.topBar a:hover span:last-child,
+div.topBar[data-animation] a:hover span:last-child {
+  	transform: none;
+}
+
+div.topBar strong, .ph_st strong{
+	color: #48e9ff;
+}
+div.topBar h1{
+	margin-left: 40px;
+	flex: 2;
+}
+.myBtn{
+	font-size: 1em;
+	font-weight: bold;
+	min-width: 80px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	flex: 0.2;
+	border-left: white solid 1.5px;
+}
+.logoutBtn{
+	border-right: white solid 1.5px;
+}
+
+input[type=submit], div.deleteBtn input[type=submit], div.hideDeleteBtn input[type=submit] {
+  	width: 100%;
+  	background-color: #48e9ff;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 15px 0;
+  	border: none;
+  	border-radius: 18px;
+  	cursor: pointer;
+	box-shadow: 0 0 10px #719ECE;
+}
+div.deleteBtn input[type=submit], div.hideDeleteBtn input[type=submit]{
+  	background-color: #ff484d;
+	box-shadow: 0 0 10px #d06f71;
+}
+div.deleteBtn input[type=submit]:hover, div.hideDeleteBtn input[type=submit]:hover{
+	background-color: #ff8e92;
+    box-shadow: 0 0 20px #d06f71;
+}
+input[type=submit]:hover {
+    background-color: #8ef1ff;
+    box-shadow: 0 0 20px #719ECE;
+}
+div.deleteBtn{
+	width: 100%;
+}
+.myBtn:hover{
+	transform: translateY(-1px);
+}
+div.footer{
+	margin-top: 2%;
+	min-width: 100%;
+	min-height: 70px;
+	background-color: rgba(210, 233, 255, 0.5);
+}
+div.postFooter{
+	position: absolute;
+  	left: 0;
+  	bottom: 0;
+	margin-top: 1%;
+	min-width: 100%;
+	min-height: 70px;
+	background-color: rgba(210, 233, 255, 0.5);
+}
+.fileChooseBtn::-webkit-file-upload-button {
+  	width: 100px;
+  	background-color: #48e9ff;
+  	color: white;
+  	padding: 7px 7px;
+  	margin: 5px;
+  	border: none;
+  	border-radius: 18px;
+  	cursor: pointer;
+	box-shadow: 0 0 5px #719ECE;
+}
+.fileChooseBtn:hover::-webkit-file-upload-button{
+    background-color: #8ef1ff;
+    box-shadow: 0 0 8px #719ECE;
+}
+#description{
+	font-family: 'Merriweather', serif;
+    color:#313131;
+  	width: 100%;
+  	padding: 12px 20px;
+  	margin: 10px 0;
+  	display: inline-block;
+  	border: 1px solid #48e9ff;
+  	border-radius: 18px;
+  	box-sizing: border-box;
+  	box-shadow: 0 0 10px #719ECE;
+  	resize: none;
+}
+#description:focus {
+	outline: none !important;
+    background-color: #f2f9ff;
+    box-shadow: 0 0 20px #719ECE;
+}
+div.postLayout{
+	padding: 2%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+}
+div.postImgLayout{
+	display: flex;
+	
+}
+div.postImgLayout img{
+	width:400px;
+	height: auto;
+	margin-bottom: 4%;
+	border-radius: 4px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+div.postEditLayout{
+	display: flex;
+	justify-content: center;
+	border-radius: 4px;
+	gap: 40px;
+	padding: 20px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+div.postAddLayout{
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+div.postImgLayout{
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+div.hideDeleteBtn{
+	display:none;
+}
+
+@media (max-width: 960px) {
+	
+}
+@media (max-width: 412px) {
+	div.loginMainContent{
+		flex-direction: column;
+	}
+	div.left{
+		flex: 2;
+		padding: 5%;
+		
+	}
+	div.loginText > *{
+		 margin:0;
+		 
+	}
+	div.right{
+		flex:1;
+	}
+	
+	div.topBar{
+		width: 100%;
+		padding: 3%;
+		border-bottom: #828282 solid 0.5px;	
+		border-radius: 0;
+	}
+	div.topBar a span:last-child {
+		visibility: hidden;
+	}
+	div.topBar a span {
+  		transition-property: none;
+	}
+	div.topBar span:first-child {
+		margin-top: 2%;
+	}
+	div.topBar a:hover span:first-child {
+  	  	transform: none;
+	}
+	div.topBar h1{
+		margin: 0 3%;
+		text-align: center;
+		font-size: 1em;
+	}
+	div.content{
+		width: 120px;
+		height: 80px;
+	}
+	div.adminPageContent{
+		padding:2% 3%;
+		margin: 5% 0;
+		
+	}
+	div.itemContent {
+		justify-content: center;
+		
+	}
+	div.postAddLayout{
+		margin: 5% 0;
+	}
+	div.postEditLayout{
+		flex-direction: column;
+		gap: 5px;
+	}
+	div.postImgLayout img{
+		width: 100%;
+	}
+	div.deleteBtn{
+		display:none;
+	}
+	div.hideDeleteBtn{
+		display: inline;
+	}
+}
