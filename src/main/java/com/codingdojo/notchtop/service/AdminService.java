@@ -34,6 +34,7 @@ public class AdminService {
 //		return aRepository.save(createUser);
 //    	
 //    }
+    
     public Admin loginAdmin(LoginAdmin logUser, BindingResult result) {
         
     	Optional<Admin> tempUser = aRepository.findByUserName(logUser.getUserName().toUpperCase());

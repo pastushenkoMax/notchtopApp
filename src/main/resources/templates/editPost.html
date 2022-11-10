@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="ISO-8859-1">
+	<title>Notchtop Specials</title>
+</head>
+<body>
+<div class="container">
+	<div class="topBar" id="topbar">
+		<h1><a href="/admin_page">Notchtop <strong>App</strong></a></h1>
+	 	<a class="myBtn" href="/addPost"><span>Add Item</span>
+	 	<span>
+	 		<img alt="" src="/images/add_icon.png" >
+	 	</span>
+	 	</a>
+	 	<a class="myBtn logoutBtn" href="/logout"><span>Logout</span>
+		<span>
+	 		<img alt="" src="/images/logout_icon.png" >
+	 	</span>
+		</a>
+	</div>
+	<div class="mainContent postLayout">
+		<div class="postEditLayout">
+			<div class="postImgLayout">
+				<img th:src="@{https://d2hj25gq6hzp2l.cloudfront.net/{name}(name=${post.fileName })}">
+				<div class="deleteBtn">
+					<form th:action="@{/post/delete/{post_id}(post_id=${post.id})}" method="post">
+						<input type="hidden" name="_method" value="delete">
+						<input class="btnDelete" type="submit" value="Delete">
+					</form>
+				</div>
+			</div>
+			<form th:action="@{/post/{post_id}/update(post_id=${post.id})}" enctype="multipart/form-data" method="post" th:object="${editPost}">
+				<input type="hidden" name="_method" value="put">
+				<div class=submitBtn> 
+					<label for="imageFile">Upload Photo: </label>
+	    			<input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg"  value="choose" class="fileChooseBtn">
+	    		</div>
+	    		<div class=forms>
+	    		<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"  class="text-danger"></p>
+			    <label for="name">Food Name: </label>
+			    <input th:name="name" type="text" class="form-control" id="user_Name" th:value="${post.name}" autocomplete="off">
+				</div> 
+				<div class=forms>
+					<label for="post_text">Food description: </label>
+					<div>
+						<input type="hidden" th:field="*{post_text} "id="post_text" th:value="${post.post_text}">
+						<textarea id="description" onchange="here();" rows="7" cols="50"><th:block th:utext="${post.post_text}"></textarea>
+					</div>
+				</div>
+				<div class=forms>
+					<input type="hidden" th:field="*{admin}" th:value="${admin_id}" class="form-control"/>
+				</div>
+				<div class=submitBtn> 
+					<input class="btn btn-primary" type="submit" value="Update">
+				</div>
+			</form>
+			<div class="hideDeleteBtn">
+				<form th:action="@{/post/delete/{post_id}(post_id=${post.id})}" method="post">
+					<input type="hidden" name="_method" value="delete">
+					<input class="btnDelete" type="submit" value="Delete">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="postFooter">
+	</div>
+</div>
+<script>
+	
+  	var text1 = document.getElementById('description').value;
+  	function here() {
+     	text1 = document.getElementById('description').value;
+     	document.getElementById("post_text").value = text1;
+  	}
+</script>
+</body>
+</html>

@@ -40,7 +40,7 @@ public class PostController {
 			return "redirect:/login";
 			}else {
 				model.addAttribute("admin_id", (Long)session.getAttribute("id"));
-				return "addPost.jsp";
+				return "addPost";
 				}
 		}
 	
@@ -52,10 +52,10 @@ public class PostController {
 			return "redirect:/login";
 			}else {
 				if(result.hasErrors()) {
-					return "addPost.jsp";
+					return "addPost";
 				}
 				if(imageFile.isEmpty()) {
-					return "addPost.jsp";
+					return "addPost";
 				}else {
 					postService.createNewPost(createPost, imageFile, result);
 					s3Service.saveFile(imageFile);
@@ -73,7 +73,7 @@ public class PostController {
 				Post p = postService.findPostByID(id);
 				model.addAttribute("admin_id", (Long)session.getAttribute("id"));
 				model.addAttribute("post", p);
-				return "editPost.jsp";
+				return "editPost";
 				}
 		}
 	

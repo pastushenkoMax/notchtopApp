@@ -34,7 +34,7 @@
 			<c:forEach var="post" items="${posts}">
 		  		<a href="/post/${post.id}/edit">
 		  		<div class="content">
-				<img alt="img" src="https://d2hj25gq6hzp2l.cloudfront.net/<c:out value="${post.fileName}" />">
+				<img th:src="@{https://d2hj25gq6hzp2l.cloudfront.net/{name}(name=${post.fileName })}">
 				<div class="overlay">
 					<div class="contentText"><c:out value="${post.name}"/></div>
 				</div>

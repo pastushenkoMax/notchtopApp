@@ -31,7 +31,7 @@ public class MainController {
 			return "redirect:/admin_page";
 			}else {
 				model.addAttribute("posts", postService.findAll());
-				return "index.jsp";
+				return "index";
 				}
 		}
 	
@@ -41,7 +41,7 @@ public class MainController {
 			return "redirect:/admin_page";
 			}else {
 				model.addAttribute("createLogin", new LoginAdmin());
-				return "login.jsp";
+				return "login";
 				}
 		}
 	
@@ -51,7 +51,7 @@ public class MainController {
 			return "redirect:/";
 		}
 		model.addAttribute("posts", postService.findAll());
-		return "adminPage.jsp";
+		return "adminPage";
 	}
 		
 	@PostMapping("/login_user")
@@ -60,7 +60,7 @@ public class MainController {
 			Model model, HttpSession session) {
 		Admin logUser = adminService.loginAdmin(createLogin, result);
 		if(result.hasErrors()) {
-	        return "login.jsp";
+	        return "login";
 	        }
 	    session.setAttribute("id", logUser.getId());
 	    return "redirect:/admin_page";

@@ -10,6 +10,11 @@
 html, body {
   height: 100%;
   margin: 0;
+  overflow: hidden;
+  background-color:#f3f3f3;
+}
+h1{
+	cursor: pointer;
 }
 div.slideContainer{
 	height: 100%;
@@ -102,4 +107,64 @@ div.ownerSlideText h1{
 }
 div.ownerSlideText p{
 	font-size: 3.2em;
+}
+.hidenBTN{
+	display:none;	
+}
+@media (max-width: 428px) {
+	div.slideContainer{
+	width: 100%;
+	height: 50%;
+	position: relative;
+	}
+	
+	div.header {
+	    font-size: 1.2em;
+	}
+	.aboutUsFooter {
+	    font-size: .9em;
+	}
+	
+	.footer {
+	    font-size: 2em;
+	}
+	
+	div.welcome_text{
+	    font-size: 2em;
+	    min-width: 400px;
+	}
+	div.ownerSlide{
+		padding: 10px 20px;
+	}
+	div.ownerSlide img{
+		position: static;
+		width: 180px;
+		margin-left: 20px;
+	}
+	div.ownerSlideText h1{
+		margin: 0 0 20px 0;
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+	div.ownerSlideText p{
+		font-size: 1.2em;
+	}
+	.hidenBTN{
+		background-color: #48e9ff;
+	  	color: white;
+	  	padding: 14px 20px;
+	  	margin: 200px 60px;
+	  	border: none;
+	  	border-radius: 18px;
+	  	cursor: pointer;
+		box-shadow: 0 0 10px #719ECE;
+	    display: flex;
+	    justify-content: center;
+	    text-decoration: none;
+	    font-size: 1.5rem;
+	}
+	.hidenBTN:hover {
+	    background-color: #8ef1ff;
+	    box-shadow: 0 0 20px #719ECE;
+	}
 }

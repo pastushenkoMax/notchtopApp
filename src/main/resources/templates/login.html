@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="ISO-8859-1">
+	<title>Notchtop Specials</title>
+</head>
+<body>
+<div class="loginContainer">
+	<div class="loginMainContent">
+		<div class="left">
+			<div class="loginText">
+				<h1 class="welcome">Welcome</h1> <h1 class="to">To</h1> <h1 class="ph_st">Notchtop <strong>App</strong></h1>
+			</div>
+		</div>
+		<div class="right">
+		<form th:action="@{/login_user}" method="post" th:object="${createLogin}">
+			<h1>Sign in to account</h1>
+			<div class=forms> 
+				<p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="text-danger"></p>
+				<label for="userName">User name: </label>
+				<input th:field="*{userName}" type="text" class="form-control" id="userName" placeholder="User Name" autocomplete="off"></input>
+			</div>   
+			<div class=forms> 
+				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></p>
+				<label for="userPassword">Password: </label>
+				<input th:field="*{password}" type="password" class="form-control" id="userPassword" placeholder="User Password"></input>
+			</div>   
+			<div class=submitBtn> 
+				<input class="btn btn-primary" type="submit" value="SIGN IN">
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
